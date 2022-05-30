@@ -49,5 +49,7 @@ Mobile Application Development Group Prject
   5. Staff Login page that enables the restaurant staffs to login inside the app and see their appropriate tasks and interfaces.
 
 **Interface**
+  
+  ![This is an image](/assets/images/Slide1.jpg)
 
 **Interaction**
