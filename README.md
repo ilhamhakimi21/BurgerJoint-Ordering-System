@@ -21,7 +21,7 @@ Mobile Application Development Group Prject
     <tr>
     <td>Muhammad Akmal Bin Anuar</td>
     <td>1911967</td>
-    <td>1.Write for the 'Features and Functionalities' in the README.MD file</td>
+    <td>1. Write for the 'Features and Functionalities' in the README.MD file</td>
   </tr>
     <tr>
     <td>Ahmad Ammar Arif Bin Abdul Aziz</td>
