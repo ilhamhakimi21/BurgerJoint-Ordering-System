@@ -86,3 +86,6 @@ Mobile Application Development Group Prject
  </p>
  
 <ins>**Interaction**</ins>
+<p>
+<img src="https://github.com/ilhamhakimi21/BurgerJoint-Ordering-System/blob/main/sequence%20diagram/SequenceDiagram2.jpg"/>
+</p>
