@@ -11,27 +11,33 @@ Mobile Application Development Group Prject
   <tr>
     <td>Muhammad Ilham Hakimi Bin Mohamad Nizam</td>
     <td>1914359</td>
-    <td>1. Write "Introductions" and "Objecticves" for README.Md</td>
+    <td><ol> <li> Write "Introductions" and "Objecticves" 
+      <li> Design Login page and Home page</ol>
+    </td>
   </tr>
   <tr>
     <td>Amirul Afiq Bin Shahdan</td>
     <td>1916491</td>
-    <td>1. Design the application mock-up and pages description</td>
+    <td><ol> <li> Design the application mock-up and pages description
+      <li> Design Select Table page and Select Menu (New Order page)</ol></td>
   </tr>
     <tr>
     <td>Muhammad Akmal Bin Anuar</td>
     <td>1911967</td>
-    <td>1. Write for the 'Features and Functionalities' in the README.MD file</td>
+    <td><ol> <li>  Write for the 'Features and Functionalities'
+      <li> Design Order Progress page</ol></td>
   </tr>
     <tr>
     <td>Ahmad Ammar Arif Bin Abdul Aziz</td>
     <td>1919933</td>
-    <td>1. Design the application mock-up and pages description</td>
+    <td><ol> <li> Design the application mock-up and pages description
+      <li> Design Order Summary (New Order page)</ol></td>
   </tr>
    <tr>
     <td>Muhammad Ersyad Ghifari</td>
     <td>1623143</td>
-    <td>1. Design sequence diagram for the application</td>
+    <td><ol> <li> Design sequence diagram for the application
+      <li> Design Order List page</ol></td>
   </tr>
 </table>
 
