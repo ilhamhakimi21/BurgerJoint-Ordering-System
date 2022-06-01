@@ -99,18 +99,18 @@ Mobile Application Development Group Prject
  </p>
  
 <ins>**Interaction**</ins>
-<h4>Ordering Menu (Table/Hall)</h4>
+<h4>Login</h4>
 <p>
-This diagram revolves around table inquieries such as menu and payment. Involves hall staff and kitchen staff.
+This diagram is about staff login. Typical login screen done by staff in order to access the app and start inputing orders and viewing orders
 </p>
 <p>
-<img src="https://github.com/ilhamhakimi21/BurgerJoint-Ordering-System/blob/main/sequence%20diagram/SequenceDiagram2.jpg"/>
+<img src="https://github.com/ilhamhakimi21/BurgerJoint-Ordering-System/blob/main/sequence%20diagram/SequenceDiagram01.jpg"/>
 </p>
 <br>
-<h4>Order Processing (Kitchen)</h4>
+<h4>Order Processing</h4>
 <p>
-This diagram revolves on login and order processing combined. Order prcessing is mostly about order queue and update order prgress (cooking and ready to serve). Involves hall staff and kitchen staff.
+This diagram revolves on order prcessing, mostly about table inquiries, order input, order queue and update order prgress (cooking and ready to serve).
 </p>
 <p>
-<img src="https://github.com/ilhamhakimi21/BurgerJoint-Ordering-System/blob/main/sequence%20diagram/SequenceDiagram1.jpg"/>
+<img src="https://github.com/ilhamhakimi21/BurgerJoint-Ordering-System/blob/main/sequence%20diagram/SequenceDiagram02.jpg"/>
 </p>
