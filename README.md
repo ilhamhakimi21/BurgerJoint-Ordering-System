@@ -11,7 +11,7 @@ Mobile Application Development Group Prject
   <tr>
     <td>Muhammad Ilham Hakimi Bin Mohamad Nizam</td>
     <td>1914359</td>
-    <td>1.</td>
+    <td>1. Write "Introductions" and "Objecticves" for README.Md</td>
   </tr>
   <tr>
     <td>Amirul Afiq Bin Shahdan</td>
@@ -36,8 +36,15 @@ Mobile Application Development Group Prject
 </table>
 
 <ins>**Introduction**</ins>
-
+  
+  <p>The BurgrerJoint system is a ordering system application that will able help the workflow of waiters or service employees in restaurants. Tis application shoold be ab;e to help taking orders from customer, storing and calcualting prices, and displaying that infomation to for the employees use. This a project under Mobile Application Development group project and we will apply what we learn from lessons in this project. We will develope the application mainly using Dart and Flutter programming language for this project.  </p>
+  
 <ins>**Objective**</ins>
+
+  This objective of tis application is:
+  1. To easily get orders from customer
+  2. To be able to track the progress of the orders
+  3. To prevent any mistakes in orders due to hunan error
 
 <ins>**Features and Functionalities**</ins>
 
