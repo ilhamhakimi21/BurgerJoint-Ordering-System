@@ -16,7 +16,7 @@ Mobile Application Development Group Prject
   <tr>
     <td>Amirul Afiq Bin Shahdan</td>
     <td>1916491</td>
-    <td>1. Design the application mocku-up and pages description</td>
+    <td>1. Design the application mock-up and pages description</td>
   </tr>
     <tr>
     <td>Muhammad Akmal Bin Anuar</td>
@@ -26,7 +26,7 @@ Mobile Application Development Group Prject
     <tr>
     <td>Ahmad Ammar Arif Bin Abdul Aziz</td>
     <td>1919933</td>
-    <td>1. Design the application mocku-up and pages description</td>
+    <td>1. Design the application mock-up and pages description</td>
   </tr>
    <tr>
     <td>Muhammad Ersyad Ghifari</td>
