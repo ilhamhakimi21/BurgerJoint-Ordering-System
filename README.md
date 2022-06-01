@@ -31,20 +31,20 @@ Mobile Application Development Group Prject
    <tr>
     <td>Muhammad Ersyad Ghifari</td>
     <td>1623143</td>
-    <td>1.</td>
+    <td>1. Design sequence diagram for the application</td>
   </tr>
 </table>
 
 <ins>**Introduction**</ins>
   
-  <p>The BurgrerJoint system is a ordering system application that will able help the workflow of waiters or service employees in restaurants. Tis application shoold be ab;e to help taking orders from customer, storing and calcualting prices, and displaying that infomation to for the employees use. This a project under Mobile Application Development group project and we will apply what we learn from lessons in this project. We will develope the application mainly using Dart and Flutter programming language for this project.  </p>
+  <p>The BurgerJoint system is a mobile appliction for automating the ordering management process. This application will be able to help the workflow of waiters or service employees in restaurants. The features that are offered by this application are recording order by tapping, storing order history, calculating total prices, and tracking the progress of the orders. The application include authentication feature to increase the security of the application. </p>
   
 <ins>**Objective**</ins>
 
-  This objective of tis application is:
-  1. To easily get orders from customer
-  2. To be able to track the progress of the orders
-  3. To prevent any mistakes in orders due to hunan error
+  This objective of this application is :
+  1. To reduce the usage of paper
+  2. To prevent any mistakes in orders due to human error
+  3. To efficiently get orders from customers
 
 <ins>**Features and Functionalities**</ins>
 
