@@ -1,6 +1,6 @@
 //BurgerJoint-Ordering-System main app
 import 'package:flutter/material.dart';
-import './accordion_card.dart';
+import './OrderProgressPage.dart';
 import './accordion_class.dart';
 
 void main() {
@@ -17,7 +17,13 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const MyHomePage(title: 'Order Progress page'),
+      initialRoute: '/', //don't define home when using initialRoute
+      routes: {
+        '/': (context) =>
+        const MyHomePage(title: 'Home page'),
+        '/OrderProgress': (context) =>
+        const OrderProgressPage(title: 'Order Progress'),
+      },
     );
   }
 }
@@ -47,15 +53,15 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            Column(
-              children: accordions.map((accordion) => AccordionCard(
-                  accordion: accordion,
-                  delete: () {
-                    setState(() {
-                      accordions.remove(accordion);
-                    });
-                  }
-              )).toList(),
+            ElevatedButton(
+                onPressed: () {
+                  Navigator.pushNamed(
+                    context,
+                    '/OrderProgress',
+                    arguments: accordions,
+                  );
+                },
+                child: const Text('Order Progress')
             ),
           ],
         ),
