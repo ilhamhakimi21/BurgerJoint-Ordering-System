@@ -59,7 +59,7 @@ Mobile Application Development Group Prject
   This system should have functions and features such as:
   1. Homescreen page that includes buttons that navigates to 'New Order', 'Order History', 'Order Progress' and 'Staff Login' pages.
   2. New Order page that streamlines the process for customer's order creation, showing food catalogs and incorporating the Point-of-Sale system.
-  3. Order Progress page that shows the status of the orders made whether they are currently 'in cooking', 'done cooking', 'unpaid' or 'paid'.
+  3. Order Progress page that shows the status of the orders in cooking and enables employees to click 'complete' if the orders have done cooking.
   4. Order History page that shows all previously made orders and their details.
   5. Staff Login page that enables the restaurant staffs to login inside the app and see their appropriate tasks and interfaces.
 
