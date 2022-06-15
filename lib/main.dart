@@ -2,6 +2,7 @@
 import 'package:flutter/material.dart';
 import './OrderProgressPage.dart';
 import './accordion_class.dart';
+import 'login_page..dart';
 
 void main() {
   runApp(const MyApp());
@@ -19,10 +20,10 @@ class MyApp extends StatelessWidget {
       ),
       initialRoute: '/', //don't define home when using initialRoute
       routes: {
-        '/': (context) =>
-        const MyHomePage(title: 'Home page'),
+        '/': (context) => const MyHomePage(title: 'Home page'),
+        '/Login': (context) => LoginPage(),
         '/OrderProgress': (context) =>
-        const OrderProgressPage(title: 'Order Progress'),
+            const OrderProgressPage(title: 'Order Progress'),
       },
     );
   }
@@ -38,7 +39,6 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-
   List<Accordion> accordions = [
     Accordion(title: 'Table1', content: 'Burger', quantity: '3')
   ];
@@ -54,6 +54,17 @@ class _MyHomePageState extends State<MyHomePage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             ElevatedButton(
+              onPressed: () {
+                Navigator.pushNamed(
+                  context,
+                  '/Login',
+                  arguments: accordions,
+                );
+              },
+              child: const Text('Login'),
+            ),
+            SizedBox(height: 20.0),
+            ElevatedButton(
                 onPressed: () {
                   Navigator.pushNamed(
                     context,
@@ -61,8 +72,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     arguments: accordions,
                   );
                 },
-                child: const Text('Order Progress')
-            ),
+                child: const Text('Order Progress')),
           ],
         ),
       ),
