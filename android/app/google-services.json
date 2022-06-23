@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "700394899971",
+    "project_id": "android-burger-order",
+    "storage_bucket": "android-burger-order.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:700394899971:android:29635d9c6502da010e5c36",
+        "android_client_info": {
+          "package_name": "com.example.burger_order"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "700394899971-i9d8n0ahgi21r9mh2ush3kigarg1u8a4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyClUEr19f89SqlzrYEdKobHj05_SMoY9gM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "700394899971-i9d8n0ahgi21r9mh2ush3kigarg1u8a4.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "700394899971-e9aa37kmt4d5tb70n053bkp6bdbbure0.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.burgerOrder"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

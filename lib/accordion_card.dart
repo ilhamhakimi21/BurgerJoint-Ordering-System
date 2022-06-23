@@ -18,38 +18,45 @@ class _AccordionCardState extends State<AccordionCard> {
   Widget build(BuildContext context) {
     return Card(
       margin: const EdgeInsets.all(10),
-      child: Column(children: [
-        ListTile(
-          title: Text(widget.accordion.title),
-          trailing: IconButton(
-            icon: Icon(
-                _showContent ? Icons.arrow_drop_up : Icons.arrow_drop_down),
-            onPressed: () {
-              setState(() {
-                _showContent = !_showContent;
-              });
-            },
+      child: InkWell(
+        onTap:  () {
+          setState(() {
+            _showContent = !_showContent;
+          });
+        },
+        child: Column(children: [
+          ListTile(
+            title: Text(widget.accordion.title),
+            trailing: IconButton(
+              icon: Icon(
+                  _showContent ? Icons.arrow_drop_up : Icons.arrow_drop_down),
+              onPressed: () {
+                setState(() {
+                  _showContent = !_showContent;
+                });
+              },
+            ),
           ),
-        ),
-        _showContent
-            ? Container(
-          padding:
-          const EdgeInsets.symmetric(vertical: 15, horizontal: 15),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
-            children: [
-              Text(widget.accordion.content),
-              Text("Qty: " + widget.accordion.quantity),
-              ElevatedButton(
-                  onPressed: widget.delete,
-                  style: ElevatedButton.styleFrom(primary: Colors.green),
-                  child: const Text("Complete")
-              ),
-            ],
-          ),
-        )
-            : Container()
-      ]),
+          _showContent
+              ? Container(
+            padding:
+            const EdgeInsets.symmetric(vertical: 15, horizontal: 15),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                Text(widget.accordion.content),
+                Text("Qty: " + widget.accordion.quantity),
+                ElevatedButton(
+                    onPressed: widget.delete,
+                    style: ElevatedButton.styleFrom(primary: Colors.green),
+                    child: const Text("Complete")
+                ),
+              ],
+            ),
+          )
+              : Container()
+        ]),
+      ),
     );
   }
 }

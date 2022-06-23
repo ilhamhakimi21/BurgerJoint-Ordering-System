@@ -1,9 +1,15 @@
 //BurgerJoint-Ordering-System main app
 import 'package:flutter/material.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'firebase_options.dart';
 import './OrderProgressPage.dart';
 import './accordion_class.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
   runApp(const MyApp());
 }
 
@@ -40,7 +46,8 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
 
   List<Accordion> accordions = [
-    Accordion(title: 'Table1', content: 'Burger', quantity: '3')
+    Accordion(title: 'Table1', content: 'Burger', quantity: '3'),
+    Accordion(title: 'Table2', content: 'Chicken chop', quantity: '1'),
   ];
 
   @override
