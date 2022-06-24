@@ -1,0 +1,17 @@
+[
+  {
+    "placeImage": "images/pepsi.jpg",
+    "placeName": "Pepsi",
+    "Bprice": 2.5
+  },
+  {
+    "placeImage": "images/coke.jpg",
+    "placeName": "Coke",
+    "Bprice": 2.5
+  },
+  {
+    "placeImage": "images/100plus.jpg",
+    "placeName": "100plus",
+    "Bprice": 2.5
+  }
+]

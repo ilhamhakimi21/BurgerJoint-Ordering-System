@@ -1,0 +1,47 @@
+[
+  {
+    "placeImage": "images/singc.png",
+    "placeName": "Chicken burger",
+    "Bprice": 5
+  },
+  {
+    "placeImage": "images/dblc.jpg",
+    "placeName": "Double Chicken Burger",
+    "Bprice": 8
+  },
+  {
+    "placeImage": "images/tric.png",
+    "placeName": "Triple Chicken Burger",
+    "Bprice": 10
+  },
+  {
+    "placeImage": "images/singb.jpg",
+    "placeName": "Beef Burger",
+    "Bprice": 7
+  },
+  {
+    "placeImage": "images/dblb.jpg",
+    "placeName": "Double Beef Burger",
+    "Bprice": 10
+  },
+  {
+    "placeImage": "images/trib.jpeg",
+    "placeName": "Triple Beef Burger",
+    "Bprice": 12
+  },
+  {
+    "placeImage": "images/singb.jpg",
+    "placeName": "Beef Burger",
+    "Bprice": 7
+  },
+  {
+    "placeImage": "images/dblb.jpg",
+    "placeName": "Double Beef Burger",
+    "Bprice": 10
+  },
+  {
+    "placeImage": "images/trib.jpeg",
+    "placeName": "Triple Beef Burger",
+    "Bprice": 12
+  }
+]
