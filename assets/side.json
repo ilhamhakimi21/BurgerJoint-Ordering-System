@@ -1,0 +1,17 @@
+[
+  {
+    "placeImage": "images/fries.jpg",
+    "placeName": "French Fries",
+    "Bprice": 3
+  },
+  {
+    "placeImage": "images/wedges.jpg",
+    "placeName": "Wedges",
+    "Bprice": 5
+  },
+  {
+    "placeImage": "images/nugget.jpeg",
+    "placeName": "Nuggets",
+    "Bprice": 4
+  }
+]

@@ -1,12 +1,16 @@
 //BurgerJoint-Ordering-System main app
 import 'package:flutter/material.dart';
+import './mainorder.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:firebase_database/firebase_database.dart';
 import 'firebase_options.dart';
 import './OrderProgressPage.dart';
 import './accordion_class.dart';
 import 'login_page..dart';
+import '/NewOrderPage.dart'; //m
+import '/OrderSummaryScreen.dart'; //m
 
-void main() async {
+Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
@@ -22,7 +26,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.brown,
       ),
       initialRoute: '/', //don't define home when using initialRoute
       routes: {
@@ -30,6 +34,10 @@ class MyApp extends StatelessWidget {
         '/Login': (context) => LoginPage(),
         '/OrderProgress': (context) =>
             const OrderProgressPage(title: 'Order Progress'),
+        '/NewOrder': (context) => const NewOrderPage(title: 'New Order'),
+        '/OrderSummary': (context) => //m
+            const OrderSummaryScreen(title: 'Order Summary'),
+        '/mainorder': (context) => const MainMenu(title: 'New Order'),
       },
     );
   }
@@ -56,31 +64,49 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: AppBar(
         title: Text(widget.title),
       ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            ElevatedButton(
-              onPressed: () {
-                Navigator.pushNamed(
-                  context,
-                  '/Login',
-                  arguments: accordions,
-                );
-              },
-              child: const Text('Login'),
-            ),
-            SizedBox(height: 20.0),
-            ElevatedButton(
+      body: Container(
+        decoration: const BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage("images/burger_bg.png"),
+            fit: BoxFit.cover,
+          ),
+        ),
+        child: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              ElevatedButton(
                 onPressed: () {
                   Navigator.pushNamed(
                     context,
-                    '/OrderProgress',
+                    '/Login',
                     arguments: accordions,
                   );
                 },
-                child: const Text('Order Progress')),
-          ],
+                child: const Text('Login'),
+              ),
+              const SizedBox(height: 30),
+              ElevatedButton(
+                  onPressed: () {
+                    Navigator.pushNamed(
+                      context,
+                      '/NewOrder',
+                    );
+                  },
+                  child: const Text('New Order')),
+              const SizedBox(height: 30),
+              ElevatedButton(
+                  onPressed: () {
+                    Navigator.pushNamed(
+                      context,
+                      '/OrderProgress',
+                      arguments: accordions,
+                    );
+                  },
+                  child: const Text('Order Progress')),
+              const SizedBox(height: 30),
+            ],
+          ),
         ),
       ),
     );
