@@ -31,7 +31,7 @@ class MyApp extends StatelessWidget {
       ),
       initialRoute: '/', //don't define home when using initialRoute
       routes: {
-        '/': (context) => const MyHomePage(title: 's'),
+        '/': (context) => const MyHomePage(title: 'BurgerJoint'),
         '/Login': (context) => const LoginPage(title: "Login Page"),
         '/Signup': (context) => const SignupPage(title: 'Signup Page'),
         '/OrderProgress': (context) =>
