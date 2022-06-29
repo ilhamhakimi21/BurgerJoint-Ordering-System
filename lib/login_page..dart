@@ -240,7 +240,7 @@ class _LoginScreenState extends State<LoginPage> {
         children: <Widget>[
           GestureDetector(
             // onTap: () => print('Sign Up Button Pressed'),
-             onTap: () => Navigator.pushNamed(context, '/Signup'),
+            onTap: () => Navigator.pushNamed(context, '/Signup'),
             child: RichText(
               text: TextSpan(
                 children: [
@@ -270,6 +270,9 @@ class _LoginScreenState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: Text(widget.title),
+      ),
       body: AnnotatedRegion<SystemUiOverlayStyle>(
         value: SystemUiOverlayStyle.light,
         child: GestureDetector(
