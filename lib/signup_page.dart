@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'constants.dart';
 import 'main.dart';
-import './signup_page.dart';
+import 'login_page..dart';
 
 class move extends StatelessWidget {
   const move({Key? key}) : super(key: key);
@@ -12,23 +12,23 @@ class move extends StatelessWidget {
     return MaterialApp(
       initialRoute: '/',
       routes: {
-        '/': (context) => const LoginPage(title: 'Login'),
-        '/Signup': (context) => const SignupPage(title: 'Signup'),
-        '/Home': (context) => const MyHomePage(title: 'Home page'),
+        '/': (context) => const SignupPage(title: 'New Order'),
+        '/Login': (context) => const LoginPage(title: 'Login Page'),
+        '/home': (context) => const MyHomePage(title: 'Home page'),
       },
     );
   }
 }
 
-class LoginPage extends StatefulWidget {
+class SignupPage extends StatefulWidget {
   final String title;
-  const LoginPage({Key? key, required this.title}) : super(key: key);
+  const SignupPage({Key? key, required this.title}) : super(key: key);
 
   @override
-  _LoginScreenState createState() => _LoginScreenState();
+  _SignupScreenState createState() => _SignupScreenState();
 }
 
-class _LoginScreenState extends State<LoginPage> {
+class _SignupScreenState extends State<SignupPage> {
   bool _rememberMe = false;
 
   Widget _buildEmailTF() {
@@ -236,35 +236,36 @@ class _LoginScreenState extends State<LoginPage> {
 
   Widget _buildSignupBtn() {
     return Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: <Widget>[
-          GestureDetector(
-            // onTap: () => print('Sign Up Button Pressed'),
-            onTap: () => Navigator.pushNamed(context, '/Signup'),
-            child: RichText(
-              text: TextSpan(
-                children: [
-                  TextSpan(
-                    text: 'Don\'t have an Account? ',
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 18.0,
-                      fontWeight: FontWeight.w400,
-                    ),
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: <Widget>[
+        GestureDetector(
+          // onTap: () => print('Sign Up Button Pressed'),
+          onTap: () => Navigator.pushNamed(context, '/Login'),
+          child: RichText(
+            text: TextSpan(
+              children: [
+                TextSpan(
+                  text: 'Already have an Account? ',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 18.0,
+                    fontWeight: FontWeight.w400,
                   ),
-                  TextSpan(
-                    text: 'Sign Up',
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 18.0,
-                      fontWeight: FontWeight.bold,
-                    ),
+                ),
+                TextSpan(
+                  text: 'Sign In',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 18.0,
+                    fontWeight: FontWeight.bold,
                   ),
-                ],
-              ),
+                ),
+              ],
             ),
           ),
-        ]);
+        ),
+      ],
+    );
   }
 
   @override
@@ -305,7 +306,7 @@ class _LoginScreenState extends State<LoginPage> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
                       Text(
-                        'Sign In',
+                        'Sign Up',
                         style: TextStyle(
                           color: Colors.white,
                           fontFamily: 'OpenSans',

@@ -6,7 +6,8 @@ import 'package:firebase_database/firebase_database.dart';
 import 'firebase_options.dart';
 import './OrderProgressPage.dart';
 import './accordion_class.dart';
-import 'login_page..dart';
+import './login_page..dart';
+import './signup_page.dart';
 import '/NewOrderPage.dart'; //m
 import '/OrderSummaryScreen.dart'; //m
 
@@ -30,8 +31,8 @@ class MyApp extends StatelessWidget {
       ),
       initialRoute: '/', //don't define home when using initialRoute
       routes: {
-        '/': (context) => const MyHomePage(title: 'Home page'),
-        '/Login': (context) => LoginPage(),
+        '/': (context) => const MyHomePage(title: 's'),
+        '/Login': (context) => const LoginPage(title: "Login Page"),
         '/OrderProgress': (context) =>
             const OrderProgressPage(title: 'Order Progress'),
         '/NewOrder': (context) => const NewOrderPage(title: 'New Order'),
