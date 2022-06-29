@@ -1,4 +1,6 @@
 //BurgerJoint-Ordering-System main app
+import 'package:burger_order/authpage.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import './mainorder.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -10,6 +12,8 @@ import './login_page..dart';
 import './signup_page.dart';
 import '/NewOrderPage.dart'; //m
 import '/OrderSummaryScreen.dart'; //m
+import './authentication_service.dart';
+import 'package:provider/provider.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -40,6 +44,7 @@ class MyApp extends StatelessWidget {
         '/OrderSummary': (context) => //m
             const OrderSummaryScreen(title: 'Order Summary'),
         '/mainorder': (context) => const MainMenu(title: 'New Order'),
+        '/authPage': (context) => authPage(),
       },
     );
   }
@@ -62,6 +67,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
+    final user = FirebaseAuth.instance.currentUser!;
     return Scaffold(
       appBar: AppBar(
         title: Text(widget.title),
@@ -77,11 +83,29 @@ class _MyHomePageState extends State<MyHomePage> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
+              // StreamBuilder<User?>(
+              //     stream: FirebaseAuth.instance.authStateChanges(),
+              //     builder: (context, snapshot) {
+              //       if (snapshot.hasData) {
+              //         return Text(
+              //           user.email!,
+              //           style: TextStyle(
+              //               fontSize: 20, fontWeight: FontWeight.bold),
+              //         );
+              //       } else {
+              //         return Text('-');
+              //       }
+              //     }),
+              Text('Sign in as', style: TextStyle(fontSize: 20)),
+              const SizedBox(height: 8),
+              Text(user.email!,
+                  style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold)),
+              const SizedBox(height: 30),
               ElevatedButton(
                 onPressed: () {
                   Navigator.pushNamed(
                     context,
-                    '/Login',
+                    '/authPage',
                     arguments: accordions,
                   );
                 },
@@ -107,6 +131,12 @@ class _MyHomePageState extends State<MyHomePage> {
                   },
                   child: const Text('Order Progress')),
               const SizedBox(height: 30),
+              ElevatedButton(
+                onPressed: () {
+                  context.read<AuthenticationService>().signOut();
+                },
+                child: Text("Sign out"),
+              ),
             ],
           ),
         ),

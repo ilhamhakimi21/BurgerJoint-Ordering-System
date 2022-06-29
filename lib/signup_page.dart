@@ -3,6 +3,8 @@ import 'package:flutter/services.dart';
 import 'constants.dart';
 import 'main.dart';
 import 'login_page..dart';
+import 'package:provider/provider.dart';
+import './authentication_service.dart';
 
 class move extends StatelessWidget {
   const move({Key? key}) : super(key: key);
@@ -30,6 +32,8 @@ class SignupPage extends StatefulWidget {
 
 class _SignupScreenState extends State<SignupPage> {
   bool _rememberMe = false;
+  final TextEditingController emailController = TextEditingController();
+  final TextEditingController passwordController = TextEditingController();
 
   Widget _buildEmailTF() {
     return Column(
@@ -45,6 +49,7 @@ class _SignupScreenState extends State<SignupPage> {
           decoration: kBoxDecorationStyle,
           height: 60.0,
           child: TextField(
+            controller: emailController,
             keyboardType: TextInputType.emailAddress,
             style: TextStyle(
               color: Colors.white,
@@ -80,6 +85,7 @@ class _SignupScreenState extends State<SignupPage> {
           decoration: kBoxDecorationStyle,
           height: 60.0,
           child: TextField(
+            controller: passwordController,
             obscureText: true,
             style: TextStyle(
               color: Colors.white,
@@ -148,14 +154,19 @@ class _SignupScreenState extends State<SignupPage> {
       width: double.infinity,
       child: RaisedButton(
         elevation: 5.0,
-        onPressed: () => print('Login Button Pressed'),
+        onPressed: () {
+          context.read<AuthenticationService>().signUp(
+                email: emailController.text.trim(),
+                password: passwordController.text.trim(),
+              );
+        },
         padding: EdgeInsets.all(15.0),
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(30.0),
         ),
         color: Colors.white,
         child: Text(
-          'LOGIN',
+          'REGISTER',
           style: TextStyle(
             color: Color(0xFF527DAA),
             letterSpacing: 1.5,
