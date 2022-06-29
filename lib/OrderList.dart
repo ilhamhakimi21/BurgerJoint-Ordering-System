@@ -24,7 +24,7 @@ class HomePage extends StatelessWidget {
   final List<Map<String, dynamic>> _items = List.generate(
       10,
       (index) =>
-          {"id": index, "title": "Item $index", "subtitle": "Subtitle $index"});
+          {"id": index, "title": "Order $index", "subtitle": "Table $index"});
 
   @override
   Widget build(BuildContext context) {
