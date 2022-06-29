@@ -30,6 +30,16 @@ class LoginPage extends StatefulWidget {
 
 class _LoginScreenState extends State<LoginPage> {
   bool _rememberMe = false;
+  final emailController = TextEditingController();
+  final passwordController = TextEditingController();
+
+  @override
+  void dispose() {
+    emailController.dispose();
+    passwordController.dispose();
+
+    super.dispose();
+  }
 
   Widget _buildEmailTF() {
     return Column(
@@ -148,7 +158,8 @@ class _LoginScreenState extends State<LoginPage> {
       width: double.infinity,
       child: RaisedButton(
         elevation: 5.0,
-        onPressed: () => print('Login Button Pressed'),
+        // onPressed: () => print('Login Button Pressed'),
+        onPressed: _signin;
         padding: EdgeInsets.all(15.0),
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(30.0),
@@ -166,6 +177,9 @@ class _LoginScreenState extends State<LoginPage> {
         ),
       ),
     );
+  }
+  Future _signin() async {
+    await FirebaseAuth instance.signInWith
   }
 
   Widget _buildSignInWithText() {
