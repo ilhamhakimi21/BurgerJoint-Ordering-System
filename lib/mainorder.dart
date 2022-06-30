@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 import 'package:hexcolor/hexcolor.dart';
@@ -10,6 +11,7 @@ import '/default_button.dart';
 import '/OrderSummaryScreen.dart';
 import './mainorder.dart';
 import 'package:firebase_core/firebase_core.dart';
+import '/NewOrderPage.dart';
 
 class Gerak extends StatelessWidget {
   const Gerak({Key? key}) : super(key: key);
@@ -45,13 +47,13 @@ class _MainMenuState extends State<MainMenu> {
         appBar: AppBar(
           title: Text(widget.title),
           centerTitle: true,
-          bottom:  TabBar(
-            indicatorColor: HexColor("#C55A11"),
+          bottom: const TabBar(
+            indicatorColor: Colors.black,
             // labelColor: Colors.white,
             tabs: [Tab(text: "Main"), Tab(text: "Side"), Tab(text: "Drink")],
           ),
         ),
-        body: const TabBarView(
+        body: TabBarView(
           children: [
             MainScreen(),
             SideScreen(),
@@ -82,10 +84,12 @@ class _MainMenuState extends State<MainMenu> {
 }
 
 class MainScreen extends StatelessWidget {
-  const MainScreen({Key? key}) : super(key: key);
-
+  MainScreen({Key? key}) : super(key: key);
+  final db = FirebaseDatabase.instance;
   @override
   Widget build(BuildContext context) {
+    final summref = db.ref().child('order/${Num.ordernum}/food');
+
     var screenHeight = MediaQuery.of(context).size.height;
     var screenWidth = MediaQuery.of(context).size.width;
 
@@ -143,7 +147,14 @@ class MainScreen extends StatelessWidget {
                   ),
                 ),
                 ElevatedButton(
-                  onPressed: () {},
+                  onPressed: (() {
+                    summref.child(Num.foodnum.toString()).set({
+                      "Name": object["placeName"],
+                      "Price": object["Bprice"],
+                      "Quantity": "1",
+                    }).asStream();
+                    Num.foodnum++;
+                  }),
                   child: const Icon(
                     Icons.add,
                     color: Colors.black,
@@ -198,10 +209,12 @@ class MainScreen extends StatelessWidget {
 }
 
 class SideScreen extends StatelessWidget {
-  const SideScreen({Key? key}) : super(key: key);
+  SideScreen({Key? key}) : super(key: key);
 
+  final db = FirebaseDatabase.instance;
   @override
   Widget build(BuildContext context) {
+    final summref = db.ref().child('order/${Num.ordernum}/food');
     var screenHeight = MediaQuery.of(context).size.height;
     var screenWidth = MediaQuery.of(context).size.width;
 
@@ -259,7 +272,14 @@ class SideScreen extends StatelessWidget {
                   ),
                 ),
                 ElevatedButton(
-                  onPressed: () {},
+                  onPressed: (() {
+                    summref.child(Num.foodnum.toString()).set({
+                      "Name": object["placeName"],
+                      "Price": object["Bprice"],
+                      "Quantity": "1",
+                    }).asStream();
+                    Num.foodnum++;
+                  }),
                   child: const Icon(
                     Icons.add,
                     color: Colors.black,
@@ -314,10 +334,12 @@ class SideScreen extends StatelessWidget {
 }
 
 class DrinkScreen extends StatelessWidget {
-  const DrinkScreen({Key? key}) : super(key: key);
+  DrinkScreen({Key? key}) : super(key: key);
 
+  final db = FirebaseDatabase.instance;
   @override
   Widget build(BuildContext context) {
+    final summref = db.ref().child('order/${Num.ordernum}/food');
     var screenHeight = MediaQuery.of(context).size.height;
     var screenWidth = MediaQuery.of(context).size.width;
 
@@ -375,7 +397,14 @@ class DrinkScreen extends StatelessWidget {
                   ),
                 ),
                 ElevatedButton(
-                  onPressed: () {},
+                  onPressed: (() {
+                    summref.child(Num.foodnum.toString()).set({
+                      "Name": object["placeName"],
+                      "Price": object["Bprice"],
+                      "Quantity": "1",
+                    }).asStream();
+                    Num.foodnum++;
+                  }),
                   child: const Icon(
                     Icons.add,
                     color: Colors.black,

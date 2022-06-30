@@ -67,8 +67,12 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
+<<<<<<< HEAD
     final user = FirebaseAuth.instance.currentUser;
     final String mail = user?.email ?? "Not signed in.";
+=======
+    // final user = FirebaseAuth.instance.currentUser!;
+>>>>>>> cc0fad1b603b35bfbb5d1f0c4be4e2d6bc8389b3
     return Scaffold(
       appBar: AppBar(
         title: Text(widget.title),
@@ -99,8 +103,13 @@ class _MyHomePageState extends State<MyHomePage> {
               //     }),
               Text('Sign in as', style: TextStyle(fontSize: 20)),
               const SizedBox(height: 8),
+<<<<<<< HEAD
               Text(mail,
                   style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold)),
+=======
+              // Text(user.email!,
+              //     style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold)),
+>>>>>>> cc0fad1b603b35bfbb5d1f0c4be4e2d6bc8389b3
               const SizedBox(height: 30),
               ElevatedButton(
                 onPressed: () {
