@@ -1,5 +1,6 @@
 // main.dart
 import 'package:flutter/material.dart';
+import 'package:firebase_database/firebase_database.dart';
 
 void main() {
   runApp(MyApp());
@@ -9,7 +10,6 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        // Remove the debug banner
         debugShowCheckedModeBanner: false,
         title: 'Order List',
         theme: ThemeData(
@@ -24,7 +24,7 @@ class HomePage extends StatelessWidget {
   final List<Map<String, dynamic>> _items = List.generate(
       10,
       (index) =>
-          {"id": index, "title": "Order $index", "subtitle": "Table $index"});
+          {"id": index, "title": "Item $index", "subtitle": "Subtitle $index"});
 
   @override
   Widget build(BuildContext context) {
@@ -42,7 +42,13 @@ class HomePage extends StatelessWidget {
                       ),
                       title: Text(item['title']),
                       subtitle: Text(item['subtitle']),
-                      onTap: () {},
+                      isThreeLine: true,
+                      onTap: () {
+                        //Navigator.pushNamed(
+                          //context,
+                          //'/OrderProgress',
+                          //);
+                      },
                     ))).toList()));
   }
 }
