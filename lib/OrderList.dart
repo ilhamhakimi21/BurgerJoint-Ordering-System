@@ -49,7 +49,14 @@ class OrderList extends StatelessWidget {
     return Scaffold(
         appBar: AppBar(
           title: Text(title),
-          leading: Icon(Icons.view_list),
+          leading: IconButton(
+              icon: const Icon(Icons.volume_up),
+              onPressed: () {
+                Navigator.pushNamed(
+                        context,
+                        '/',
+                        );
+              }),
         ),
         body: ListView(
             children: ListTile.divideTiles(
