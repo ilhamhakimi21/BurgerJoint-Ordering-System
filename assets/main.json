@@ -30,18 +30,18 @@
     "Bprice": 12
   },
   {
-    "placeImage": "images/singb.jpg",
-    "placeName": "Beef Burger",
-    "Bprice": 7
+    "placeImage": "images/SCB.jpg",
+    "placeName": "Special Chicken Burger",
+    "Bprice": 14
   },
   {
-    "placeImage": "images/dblb.jpg",
-    "placeName": "Double Beef Burger",
-    "Bprice": 10
+    "placeImage": "images/SFB.jpg",
+    "placeName": "Special Fish Burger",
+    "Bprice": 14
   },
   {
-    "placeImage": "images/trib.jpeg",
-    "placeName": "Triple Beef Burger",
-    "Bprice": 12
+    "placeImage": "images/UB.jpg",
+    "placeName": "Ultimate Burger",
+    "Bprice": 18
   }
 ]

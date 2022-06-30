@@ -1,3 +1,4 @@
+import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
 import '/OrderSummaryScreen.dart';
 import './mainorder.dart';
@@ -27,9 +28,37 @@ class NewOrderPage extends StatefulWidget {
   State<NewOrderPage> createState() => _NewOrderPageState();
 }
 
+class Num {
+  static var ordernum = 1;
+  static var foodnum = 1;
+}
+
 class _NewOrderPageState extends State<NewOrderPage> {
+  TextEditingController table = TextEditingController();
+  bool submit = false;
+  final db = FirebaseDatabase.instance;
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    table.addListener(() {
+      setState(() {
+        submit = table.text.isNotEmpty;
+      });
+    });
+  }
+
+  @override
+  void dispose() {
+    // Clean up the controller when the widget is disposed.
+    table.dispose();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
+    var num = 1;
+    final summref = db.ref().child('order/${Num.ordernum}');
     return Scaffold(
       appBar: AppBar(
         title: Text(widget.title),
@@ -62,6 +91,7 @@ class _NewOrderPageState extends State<NewOrderPage> {
                               fontWeight: FontWeight.bold, fontSize: 20),
                         ),
                         TextField(
+                          controller: table,
                           decoration: InputDecoration(
                               border: OutlineInputBorder(),
                               filled: true,
@@ -71,12 +101,19 @@ class _NewOrderPageState extends State<NewOrderPage> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             ElevatedButton(
-                                onPressed: (() {
-                                  Navigator.pushNamed(
-                                    context,
-                                    '/mainorder',
-                                  );
-                                }),
+                                onPressed: submit
+                                    ? () {
+                                        Navigator.pushNamed(
+                                          context,
+                                          '/mainorder',
+                                        );
+                                        summref.set({
+                                          "table": table.text,
+                                          "TotalPrice": "",
+                                          "ProgressStatus": "0",
+                                        }).asStream();
+                                      }
+                                    : null,
                                 child: const Text("Submit")),
                           ],
                         ),
