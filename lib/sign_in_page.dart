@@ -27,6 +27,7 @@ class SignInPage extends StatelessWidget {
           ),
           TextField(
             controller: passwordController,
+            obscureText: true,
             style: TextStyle(
                 color: Colors.blue,
                 fontWeight: FontWeight.bold,
